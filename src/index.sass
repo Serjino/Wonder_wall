@@ -17,7 +17,7 @@ body
 #root
     --color_main: rgba(42, 43, 47, 1)
     --color_main_light: rgba(0, 0, 0, 0.3)
-    --color_secondary: #E5B800
+    --color_secondary: rgba(180, 144, 0, 1)
     --gutter-section: 50px
     --gutter-heading: 30px
     .main
@@ -72,16 +72,25 @@ body
             align-items: center
             padding: 0px 20px
             margin-bottom: var(--gutter-section)
-            .button
-                padding: 8px 20px 10px
-                font-family: 'Zen Kaku Gothic Antique', sans-serif !important
-                background-color: #E6B800
-                font-weight: 500
-                font-size: 18px
-                letter-spacing: 1px
-                box-shadow: 5px 5px 10px rgba(0,0,0,0.5)
+            .btn-wrapper
+                display: flex
+                justify-content: center
+                .button
+                    padding: 8px 20px 10px
+                    font-family: 'Zen Kaku Gothic Antique', sans-serif !important
+                    background-color: rgba(180, 144, 0, 1)
+                    font-weight: 500
+                    font-size: 18px
+                    letter-spacing: 1px
+                    box-shadow: 5px 5px 10px rgba(0,0,0,0.5)
+                    &.leave-order-btn
+                        min-width: 200px !important
+                        display: flex
+                        justify-content: center !important
             .section-heading
                 display: flex
+                justify-content: center
+                text-align: center
                 width: 100%
                 font-size: 50px
                 line-height: 50px
@@ -93,7 +102,7 @@ body
                 top: -20px
                 background: url('./misc/main-offer.jpg') no-repeat center center
                 background-size: cover
-                min-height: 500px
+                min-height: 550px
                 display: flex
                 align-items: center
                 justify-content: center
@@ -111,11 +120,11 @@ body
                 .section-content
                     display: flex
                     flex-direction: column
-                    align-items: flex-end
+                    // align-items: flex-end
 
                     z-index: 3
                     .section-heading
-                        justify-content: flex-end
+                        // justify-content: flex-end
                     .text
                         text-align: justify
                         margin-bottom: var(--gutter-heading)
@@ -139,6 +148,9 @@ body
                 // align-items: center
                 // justify-content: center
 
+                .section-heading
+                    // justify-content: flex-end
+
                 .section-content
                     width: 100%
                     display: flex
@@ -150,17 +162,21 @@ body
                         width: 100%
                         .video
                             width: 100%
-                            margin-bottom: var(--gutter-section)
 
                 .swiper
                     width: 100%
-                    height: 300px
+                    height: 450px
                     img
                         width: 100%
                         height: 100%
                         object-fit: cover
                     .swiper-pagination
+                        background: var(--color_main)
+                        height: 40px
+                        bottom: 0px !important
                         .swiper-pagination-bullet
+                            margin-top: 20px
+                            // margin-top: 50px !important
                             background-color: var(--color_secondary)
 
             &.how-do-we-work::after
@@ -171,6 +187,74 @@ body
                 bottom: 0
                 left: 0
                 background: url('./misc/video-cadr.svg') no-repeat center center
-                background-size: cover
+                background-size: 150%
                 filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(5px 5px 5px #E6B800)
-                filter: brightness(70%)
+                filter: brightness(50%)
+
+            &.calculate
+                .section-content
+                    width: 100%
+                    .calculator-wrapper
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        width: 100%
+                        .dimensions
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            // width: 100%
+                            .dimension
+                                // width: 20%
+                                display: flex
+                                flex-direction: column
+                                align-items: center
+                                margin-bottom: var(--gutter-heading)
+                                // width: auto
+                                // width: 50%
+                                .title
+                                    font-family: Amatic SC
+                                    font-style: normal
+                                    font-weight: bold
+                                    font-size: 30px
+                                    line-height: 38px
+                                .input
+                                    display: flex
+                                    font-family: Amatic SC
+                                    font-style: normal
+                                    font-weight: bold
+                                    font-size: 48px
+                                    line-height: 61px
+                                    border-radius: 20px
+                                    padding: 0 !important
+                                    width: 100%
+                                    text-align: center
+                                    transition: box-shadow 0.3s ease-in-out
+                                    border: none
+                                    &:focus
+                                        box-shadow: 10px 10px 0px 0px rgba(180, 144, 0, 1)
+                                        outline: none
+
+                            .multiply_sign
+                                align-self: flex-end
+                                font-family: Amatic SC
+                                font-style: normal
+                                font-weight: bold
+                                font-size: 48px
+                                line-height: 61px
+                                border-radius: 20px
+                                margin: 0px 20px
+                        .square,
+                        .price,
+                            margin-bottom: var(--gutter-heading)
+                            font-family: Amatic SC
+                            font-style: normal
+                            font-weight: bold
+                            font-size: 30px
+                            line-height: 38px
+                        .result
+                            font-family: Amatic SC
+                            color: var(--color_secondary)
+                            font-weight: bold
+                            font-size: 60px
+                            line-height: 76px
