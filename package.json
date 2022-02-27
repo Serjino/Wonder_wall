@@ -1,0 +1,66 @@
+{
+    "name": "mobilization-web",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@hookform/error-message": "latest",
+        "@mui/material": "^5.3.1",
+        "axios": "^0.21.4",
+        "date-fns": "^2.24.0",
+        "env-cmd": "^10.1.0",
+        "file-type": "^16.5.3",
+        "i18next": "^20.3.5",
+        "node-sass": "^6.0.1",
+        "path-to-regexp": "^6.2.0",
+        "prop-types": "latest",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-hook-form": "^7.14.2",
+        "react-i18next": "^11.11.4",
+        "react-linkify": "^1.0.0-alpha",
+        "react-number-format": "^4.9.1",
+        "react-player": "^2.9.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "5.0.0",
+        "react-select": "^4.3.1",
+        "swiper": "^8.0.5",
+        "typescript": "^4.3.5"
+    },
+    "scripts": {
+        "start": "env-cmd -f ./.env.local react-scripts start",
+        "build:dev": "env-cmd -f ./.env.dev react-scripts build",
+        "build:prod": "env-cmd -f ./.env.prod react-scripts build",
+        "build:local": "env-cmd -f ./.env.local react-scripts build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app"
+        ],
+        "rules": {
+            "react-hooks/exhaustive-deps": "off",
+            "jsx-a11y/alt-text": "off"
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/node": "^16.4.3",
+        "@types/react": "^17.0.15",
+        "@types/react-dom": "^17.0.9",
+        "@types/react-linkify": "^1.0.1",
+        "@types/react-router-dom": "^5.1.8",
+        "@types/react-select": "^4.0.17"
+    }
+}

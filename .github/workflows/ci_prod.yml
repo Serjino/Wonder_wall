@@ -1,0 +1,34 @@
+name: Build PROD
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  ci:
+    name: Build PROD
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: |
+            r1/${{ runner.os }}/npm/${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            r1/${{ runner.os }}/npm/
+      - run: npm ci
+      - run: CI=false npm run build:prod
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: build_prod
+          publish_dir: build
+          force_orphan: true

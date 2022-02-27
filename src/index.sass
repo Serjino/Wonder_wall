@@ -1,0 +1,176 @@
+// @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap')
+
+*
+    box-sizing: border-box
+    padding: 0px
+    margin: 0px
+
+body
+    widht: 100vw
+    background-color: rgba(42, 43, 47, 1)
+    font-family: 'Zen Kaku Gothic Antique', sans-serif
+    font-weight: 500
+    font-size: 16px
+    color: white
+
+#root
+    --color_main: rgba(42, 43, 47, 1)
+    --color_main_light: rgba(0, 0, 0, 0.3)
+    --color_secondary: #E5B800
+    --gutter-section: 50px
+    --gutter-heading: 30px
+    .main
+        .header
+            position: relative
+            width: 100%
+            height: 80px
+            overflow: hidden !important
+            display: flex
+            justify-content: center
+            background-color: transparent
+            z-index: 999
+            // background-color: white
+
+            // margin-bottom: 130px
+            .wrapper
+                display: flex
+                justify-content: center
+                position: absolute
+                padding: 20px
+                top: -40px
+                // margin-left: -40px
+                width: 130%
+                height: 120px
+                background: white
+                border-radius: 300px/50px
+                // border: 1px solid red
+                .inner-wrapper
+                    display: flex
+                    align-items: flex-start
+                    justify-content: space-between
+                    width: 100vw
+                    padding: 37px 20px 0px 20px
+                    .whatsapp,
+                    .instagramm
+                        width: 35px
+                        height: 35px
+                    .whatsapp
+                        background: url('./misc/whatsapp.svg') no-repeat center center
+                    .instagramm
+                        background: url('./misc/instagramm.svg') no-repeat center center
+
+                    .logo
+                        width: 145px
+                        height: 45px
+                        background: url('./misc/logo.svg') no-repeat center center
+
+        .section
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 0px 20px
+            margin-bottom: var(--gutter-section)
+            .button
+                padding: 8px 20px 10px
+                font-family: 'Zen Kaku Gothic Antique', sans-serif !important
+                background-color: #E6B800
+                font-weight: 500
+                font-size: 18px
+                letter-spacing: 1px
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.5)
+            .section-heading
+                display: flex
+                width: 100%
+                font-size: 50px
+                line-height: 50px
+                font-weight: bold
+                font-family: 'Amatic SC', cursive
+                margin-bottom: var(--gutter-heading)
+            &.main-offer
+                position: relative
+                top: -20px
+                background: url('./misc/main-offer.jpg') no-repeat center center
+                background-size: cover
+                min-height: 500px
+                display: flex
+                align-items: center
+                justify-content: center
+                filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(0px 15px 25px #E6B800)
+
+                // .photo
+                //     min-height: 350px
+                //     overflow: hidden
+                //     width: 90%
+                //     margin-bottom: var(--gutter-section)
+                //     background: url('./misc/main-offer.jpg') no-repeat center center
+                //     background-size: cover
+                //     border-radius: 50px 17px
+                //     filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(15px 20px 4px #E6B800)
+                .section-content
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-end
+
+                    z-index: 3
+                    .section-heading
+                        justify-content: flex-end
+                    .text
+                        text-align: justify
+                        margin-bottom: var(--gutter-heading)
+
+            &.main-offer::after
+                content: ""
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                background-color: var(--color_main_light)
+
+            &.how-do-we-work
+                position: relative
+                // top: -20px
+
+                background-size: cover
+                min-height: 500px
+                // display: flex
+                // align-items: center
+                // justify-content: center
+
+                .section-content
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-end
+                    z-index: 9
+
+                    .video-wrapper
+                        width: 100%
+                        .video
+                            width: 100%
+                            margin-bottom: var(--gutter-section)
+
+                .swiper
+                    width: 100%
+                    height: 300px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                    .swiper-pagination
+                        .swiper-pagination-bullet
+                            background-color: var(--color_secondary)
+
+            &.how-do-we-work::after
+                content: ""
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                background: url('./misc/video-cadr.svg') no-repeat center center
+                background-size: cover
+                filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(5px 5px 5px #E6B800)
+                filter: brightness(70%)
