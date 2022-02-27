@@ -30,9 +30,9 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build:dev": "env-cmd -f ./.env.dev react-scripts build",
-        "build:prod": "env-cmd -f ./.env.prod react-scripts build",
-        "build:local": "env-cmd -f ./.env.local react-scripts build"
+        "build:dev": "react-scripts build",
+        "build:prod": "react-scripts build",
+        "build:local": "react-scripts build"
     },
     "eslintConfig": {
         "extends": [
