@@ -10,65 +10,55 @@ import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './index.sass'
-import slide1 from './misc/slider/slide1.jpg'
-import slide2 from './misc/slider/slide2.jpg'
-import slide3 from './misc/slider/slide3.jpg'
-import slide4 from './misc/slider/slide4.jpg'
-import slide5 from './misc/slider/slide5.jpg'
-import slide6 from './misc/slider/slide6.jpg'
-import slide7 from './misc/slider/slide7.jpg'
-import slide8 from './misc/slider/slide8.jpg'
-import slide9 from './misc/slider/slide9.jpg'
-import slide10 from './misc/slider/slide10.jpg'
-import slide11 from './misc/slider/slide11.jpg'
+import { slides } from './misc/slider/slides';
+import { Tabs } from './components/tabs/tabs';
+import img1 from './misc/tabImgs/1_paint_quality.png'
+import img2 from './misc/tabImgs/2_print_dimensions.png'
+import img3 from './misc/tabImgs/3_print_speed.png'
+import img4 from './misc/tabImgs/4_any_format.png'
 
-const slides = [
+let tabContent = [
     {
-        title: "",
-        url: slide1
+        btnIcon: 'format_color_fill',
+        content: {
+            img: img1,
+            title: 'Я заголовок таба',
+            text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Tempora eligendi, atque facilis quae nihil ipsum ex! Consequatur perspiciatis soluta obcaecati. 
+        Deserunt aliquid quibusdam reprehenderit cum nemo dolor consequuntur veritatis placeat.`
+        }
     },
     {
-        title: "",
-        url: slide2
+        btnIcon: 'photo_size_select_large',
+        content: {
+            img: img2,
+            title: 'Я заголовок таба',
+            text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Tempora eligendi, atque facilis quae nihil ipsum ex! Consequatur perspiciatis soluta obcaecati. 
+        Deserunt aliquid quibusdam reprehenderit cum nemo dolor consequuntur veritatis placeat.`
+        }
     },
     {
-        title: "",
-        url: slide3
+        btnIcon: 'speed',
+        content: {
+            img: img3,
+            title: 'Я заголовок таба',
+            text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Tempora eligendi, atque facilis quae nihil ipsum ex! Consequatur perspiciatis soluta obcaecati. 
+        Deserunt aliquid quibusdam reprehenderit cum nemo dolor consequuntur veritatis placeat.`
+        }
     },
     {
-        title: "",
-        url: slide4
-    },
-    {
-        title: "",
-        url: slide5
-    },
-    {
-        title: "",
-        url: slide6
-    },
-    {
-        title: "",
-        url: slide7
-    },
-    {
-        title: "",
-        url: slide8
-    },
-    {
-        title: "",
-        url: slide9
-    },
-    {
-        title: "",
-        url: slide10
-    },
-    {
-        title: "",
-        url: slide11
+        btnIcon: 'engineering',
+        content: {
+            img: img4,
+            title: 'Я заголовок таба',
+            text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Tempora eligendi, atque facilis quae nihil ipsum ex! Consequatur perspiciatis soluta obcaecati. 
+        Deserunt aliquid quibusdam reprehenderit cum nemo dolor consequuntur veritatis placeat.`
+        }
     },
 ]
-
 
 function App() {
     const [dimensions, setDimensions] = React.useState({
@@ -114,6 +104,14 @@ function App() {
                     <div className="btn-wrapper">
                         <Button className="button leave-order" variant={"contained"}>Оставить заявку</Button>
                     </div>
+                </div>
+            </div>
+            <div className="section advantages">
+                <div className="section-content">
+                    <h1 className="section-heading">
+                        Преимущества
+                    </h1>
+                    <Tabs tabContent={tabContent}/>
                 </div>
             </div>
             <div className="section how-do-we-work">
@@ -195,7 +193,7 @@ function App() {
                             Площадь: <span className="result">{square} кв.м.</span>
                         </div>
                         <div className="price">
-                        {price > minPrice ? "Стоимость: " : "Мин. стоимость: "}  <span className="result">{price}р.</span>
+                            {price > minPrice ? "Стоимость: " : "Мин. стоимость: "}  <span className="result">{price}р.</span>
                         </div>
                         <div className="btn-wrapper">
                             <Button className="button leave-order" variant={"contained"}>Оставить заявку</Button>
