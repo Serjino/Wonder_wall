@@ -1,4 +1,4 @@
-// @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap')
 
 *
@@ -8,11 +8,19 @@
 
 body
     widht: 100vw
+    min-width: 350px !important
     background-color: rgba(42, 43, 47, 1)
-    font-family: 'Zen Kaku Gothic Antique', sans-serif
+    font-family: Roboto, sans-serif !important
     font-weight: 500
     font-size: 16px
     color: white
+
+.tel
+    font-family: 'Amatic SC', cursive
+    color: var(--color_main)
+    text-decoration: none
+    font-weight: 700
+    font-size: 25px
 
 #root
     --color_main: rgba(42, 43, 47, 1)
@@ -24,47 +32,45 @@ body
         .header
             position: relative
             width: 100%
-            height: 80px
             overflow: hidden !important
             display: flex
             justify-content: center
             background-color: transparent
             z-index: 999
-            // background-color: white
+            background: white
+            border-radius: 0px 0px 0px 0px
 
-            // margin-bottom: 130px
-            .wrapper
+            .inner-wrapper
+                position: relative
                 display: flex
-                justify-content: center
-                position: absolute
-                padding: 20px
-                top: -40px
-                // margin-left: -40px
-                width: 130%
-                height: 120px
-                background: white
-                border-radius: 300px/50px
-                // border: 1px solid red
-                .inner-wrapper
+                padding: 15px 20px
+                align-items: center
+                justify-content: space-between
+                min-width: 100%
+                .whatsapp
+                    width: 35px
+                    height: 35px
+                .whatsapp
+                    background: url('./misc/whatsapp.svg') no-repeat center center
+                .instagramm
+                    background: url('./misc/instagramm.svg') no-repeat center center
+                .logo_wrapper
                     display: flex
-                    align-items: flex-start
-                    justify-content: space-between
-                    width: 100vw
-                    padding: 37px 20px 0px 20px
-                    .whatsapp,
-                    .instagramm
-                        width: 35px
-                        height: 35px
-                    .whatsapp
-                        background: url('./misc/whatsapp.svg') no-repeat center center
-                    .instagramm
-                        background: url('./misc/instagramm.svg') no-repeat center center
-
+                    align-items: center
                     .logo
-                        width: 145px
-                        height: 45px
-                        background: url('./misc/logo.svg') no-repeat center center
-
+                        width: 55px
+                        height: 55px
+                        margin-right: 10px
+                        background: url('./misc/logo.jpg') no-repeat center center
+                        background-size: cover
+                    .logo_name
+                        font-family: 'Amatic SC', cursive
+                        font-size: 25px
+                        font-weight: bold
+                        letter-spacing: 1px
+                        display: flex
+                        max-width: 60px
+                        color: black
         .section
             width: 100%
             display: flex
@@ -76,12 +82,12 @@ body
                 display: flex
                 justify-content: center
                 .button
-                    padding: 8px 20px 10px
-                    font-family: 'Zen Kaku Gothic Antique', sans-serif !important
+                    padding: 10px 20px 10px
                     background-color: rgba(180, 144, 0, 1)
-                    font-weight: 500
+                    font-weight: 300
                     font-size: 18px
-                    letter-spacing: 1px
+                    letter-spacing: 1.5px
+                    font-weight: 400
                     box-shadow: 5px 5px 10px rgba(0,0,0,0.5)
                     &.leave-order-btn
                         min-width: 200px !important
@@ -99,33 +105,38 @@ body
                 margin-bottom: var(--gutter-heading)
             &.main-offer
                 position: relative
-                top: -20px
-                background: url('./misc/main-offer.jpg') no-repeat center center
+                padding: 0px !important
+                // top: -20px
+                // padding-top: 20px
+                // background: url('./misc/main-offer.jpg') no-repeat center center
+                background: url('./misc/slider/slide1.jpg') no-repeat center center
                 background-size: cover
                 min-height: 550px
                 display: flex
                 align-items: center
                 justify-content: center
-                filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(0px 15px 25px #E6B800)
-
-                // .photo
-                //     min-height: 350px
-                //     overflow: hidden
-                //     width: 90%
-                //     margin-bottom: var(--gutter-section)
-                //     background: url('./misc/main-offer.jpg') no-repeat center center
-                //     background-size: cover
-                //     border-radius: 50px 17px
-                //     filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(15px 20px 4px #E6B800)
+                filter: brightness(108%)
+                // filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(0px 15px 25px #E6B800)
+                .section-heading
+                    margin-bottom: 20px
                 .section-content
                     display: flex
+                    padding: 20px
                     flex-direction: column
-                    // align-items: flex-end
-
+                    align-items: center
+                    justify-content: center
                     z-index: 3
+                    max-width: 500px
+                    height: 100%
+                    background-color: var(--color_main_light)
+                    // filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(0px 15px 25px #E6B800)
+                    // color: var(--color_main)
                     .section-heading
-                        // justify-content: flex-end
                     .text
+                        font-weight: 300
+                        letter-spacing: 0.5px
+                        font-size: 16px
+                        line-height: 20px
                         text-align: justify
                         margin-bottom: var(--gutter-heading)
 
@@ -136,26 +147,19 @@ body
                 right: 0
                 bottom: 0
                 left: 0
-                background-color: var(--color_main_light)
+                // background-color: var(--color_main_light)
 
             &.advantages
                 padding: 0
                 .section-content
                     width: 100%
 
-
             &.how-do-we-work
                 position: relative
-                // top: -20px
-
                 background-size: cover
                 min-height: 500px
-                // display: flex
-                // align-items: center
-                // justify-content: center
 
                 .section-heading
-                    // justify-content: flex-end
 
                 .section-content
                     width: 100%
@@ -166,12 +170,26 @@ body
 
                     .video-wrapper
                         width: 100%
+                        border-radius: 8px
                         .video
+                            border-radius: 8px !important
                             width: 100%
+                            // height: 600px !important
+            &.gallery
+                position: relative
 
+                background-size: cover
+                min-height: 500px
+                .section-content
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-end
+                    z-index: 9
                 .swiper
                     width: 100%
                     height: 450px
+                    border-radius: 8px
                     img
                         width: 100%
                         height: 100%
@@ -182,7 +200,6 @@ body
                         bottom: 0px !important
                         .swiper-pagination-bullet
                             margin-top: 20px
-                            // margin-top: 50px !important
                             background-color: var(--color_secondary)
 
             &.how-do-we-work::after
@@ -192,9 +209,9 @@ body
                 right: 0
                 bottom: 0
                 left: 0
-                background: url('./misc/video-cadr.svg') no-repeat center center
+                // background: url('./misc/video-cadr.svg') no-repeat center center
                 background-size: 150%
-                filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(5px 5px 5px #E6B800)
+                // filter: drop-shadow(3px 3px 5px rgba(42, 43, 47, 0.8)) drop-shadow(5px 5px 5px #E6B800)
                 filter: brightness(50%)
 
             &.calculate
@@ -209,58 +226,137 @@ body
                             display: flex
                             justify-content: center
                             align-items: center
-                            // width: 100%
+                            margin-bottom: var(--gutter-heading)
                             .dimension
-                                // width: 20%
                                 display: flex
                                 flex-direction: column
                                 align-items: center
-                                margin-bottom: var(--gutter-heading)
-                                // width: auto
-                                // width: 50%
                                 .title
-                                    font-family: Amatic SC
                                     font-style: normal
-                                    font-weight: bold
-                                    font-size: 30px
+                                    font-weight: 300
+                                    font-size: 25px
                                     line-height: 38px
+                                    margin-bottom: 10px
                                 .input
                                     display: flex
-                                    font-family: Amatic SC
                                     font-style: normal
-                                    font-weight: bold
-                                    font-size: 48px
-                                    line-height: 61px
-                                    border-radius: 20px
+                                    font-weight: 300
+                                    font-size: 30px
+                                    line-height: 48px
+                                    border-radius: 8px
                                     padding: 0 !important
-                                    width: 100%
+                                    width: 130px
+                                    min-width: 130px
                                     text-align: center
                                     transition: box-shadow 0.3s ease-in-out
                                     border: none
                                     &:focus
                                         box-shadow: 10px 10px 0px 0px rgba(180, 144, 0, 1)
                                         outline: none
+                                &.square
+                                    display: none
 
-                            .multiply_sign
+                            .sign
                                 align-self: flex-end
-                                font-family: Amatic SC
                                 font-style: normal
-                                font-weight: bold
-                                font-size: 48px
-                                line-height: 61px
-                                border-radius: 20px
-                                margin: 0px 20px
-                        .square,
-                        .price,
+                                font-weight: 300
+                                font-size: 30px
+                                margin: 0px 20px 5px
+                                &.equal
+                                    display: none
+                        // .square
+                        //     margin-bottom: 20px
+                        .price
                             margin-bottom: var(--gutter-heading)
-                            font-family: Amatic SC
+                        // .square,
+                        .price
+                            display: flex
+                            flex-direction: column
+                            align-self: center
+                            text-align: center
                             font-style: normal
-                            font-weight: bold
-                            font-size: 30px
-                            line-height: 38px
+                            font-weight: 300
+                            font-size: 25px
+                            .title
+                                margin-bottom: 5px
                         .result
-                            font-family: Amatic SC
                             color: var(--color_secondary)
-                            font-weight: bold
-                            font-size: 60px
-                            line-height: 76px
+                            font-weight: 500
+                            font-size: 35px
+
+    .footer
+        width: 100%
+        // height: 30px
+        padding: 20px 10px
+        overflow: hidden !important
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: transparent
+        z-index: 999
+        font-weight: 300
+        background: white
+        color: var(--color_main)
+
+@media screen and (min-width: 550px)
+    #root
+        --color_main: rgba(42, 43, 47, 1)
+        --color_main_light: rgba(0, 0, 0, 0.3)
+        --color_secondary: rgba(180, 144, 0, 1)
+        --gutter-section: 70px
+        --gutter-heading: 40px
+    .tel
+        font-size: 30px
+
+    .main-offer
+        .section-content
+            padding: 30px !important
+    .section:not(.advantages)
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 0px 30px !important
+        margin-bottom: var(--gutter-section)
+    .header
+        .inner-wrapper
+            padding: 15px 30px !important
+
+@media screen and (min-width: 650px)
+    .video-wrapper
+        .video
+            height: 600px !important
+    .swiper
+        width: 100%
+        height: 600px !important
+        border-radius: 8px
+        .swiper-pagination
+            background: var(--color_main)
+            height: 40px
+            bottom: 0px !important
+            .swiper-pagination-bullet
+                margin-top: 20px
+                background-color: var(--color_secondary)
+
+    .section.main-offer
+        // background-size: 100% !important
+        // background-position: 0px -100px !important
+        // height: 850px
+    .dimension.square,
+    .sign.equal
+        display: flex !important
+
+@media screen and (min-width: 1024px)
+    .video-wrapper
+        .video
+            height: 800px !important
+    .swiper
+        width: 100%
+        height: 800px !important
+        border-radius: 8px
+    .section.main-offer
+        // background-size: contain !important
+        align-items: flex-start !important
+        justify-content: center !important
+        // background-position: 0px -350px !important
+        height: 850px

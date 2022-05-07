@@ -8,7 +8,7 @@ import slide7 from './slide7.jpg'
 import slide8 from './slide8.jpg'
 import slide9 from './slide9.jpg'
 import slide10 from './slide10.jpg'
-import slide11 from './slide11.jpg'
+// import slide11 from './slide11.jpg'
 
 export const slides = [
     {
@@ -51,8 +51,8 @@ export const slides = [
         title: "",
         url: slide10
     },
-    {
-        title: "",
-        url: slide11
-    },
+    // {
+    //     title: "",
+    //     url: slide11
+    // },
 ]

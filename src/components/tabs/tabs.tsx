@@ -19,8 +19,6 @@ export function Tabs(props: ITabsProps) {
 
     const [activeTab, setActiveTab] = React.useState(0)
 
-
-
     return (
         <div className="tab-wrapper">
             <div className="tab-inner">
