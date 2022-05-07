@@ -4,11 +4,12 @@ import ReactPlayer from 'react-player/youtube'
 import { Button, Icon } from "@mui/material";
 import { BrowserRouter, Switch, Redirect, useLocation, useHistory, Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from 'swiper';
+import { Pagination, Navigation, Autoplay } from 'swiper';
 import NumberFormat from "react-number-format";
 import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay'
 import './index.sass'
 import { slides } from './misc/slider/slides';
 import { Tabs } from './components/tabs/tabs';
@@ -150,8 +151,14 @@ function App() {
                         Наши работы
                     </h2>
                     <Swiper
-                        modules={[Pagination, Navigation]}
-                        pagination
+                        modules={[Pagination, Navigation, Autoplay]}
+                        autoplay={{
+                            delay: 5000,
+                            disableOnInteraction: false
+                        }}
+                        pagination={{
+                            clickable: true
+                        }}
                         className="mySwiper">
 
                         {
